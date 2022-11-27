@@ -54,6 +54,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 body {
@@ -86,9 +87,15 @@ body {
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .visually-hidden {
@@ -106,10 +113,28 @@ body {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+    background-color: green;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    background-color: purple;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    background-color: red;
+  }
 }
 
 /* --- логотип --- */
@@ -592,14 +617,25 @@ body {
   color: var(--primary-text-color);
 }
 
-/* --- наші переваги --- */
 .card-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.card-list .card-list__item + .card-list__item {
-  margin-left: 30px;
+.card-list__item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .card-list__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-list__item {
+    width: calc((100% - 90px) / 4);
+  }
 }
 
 .card-list__container {
