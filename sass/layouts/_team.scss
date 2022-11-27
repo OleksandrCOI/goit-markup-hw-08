@@ -7,11 +7,14 @@
 .team {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
-.team > .team-item + .team-item {
-  margin-left: 30px;
-}
+// .team > .team-item + .team-item {
+//   margin-left: 30px;
+// }
 
 .team-item {
   background: var(--background-color);
