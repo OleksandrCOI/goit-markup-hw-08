@@ -611,10 +611,17 @@ body {
 .section__title,
 .section-title {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+}
+@media screen and (min-width: 1200px) {
+  .section__title,
+.section-title {
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 
 .card-list {
@@ -644,7 +651,7 @@ body {
   justify-content: center;
   background: var(--background-button-color);
   border-radius: 4px;
-  width: 270px;
+  width: 100%;
   height: 120px;
 }
 

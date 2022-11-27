@@ -6,10 +6,15 @@
 .section__title,
 .section-title {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 
 .card-list {
@@ -26,10 +31,10 @@
 .card-list__item {
   width: 100%;
   @media screen and (min-width: 768px) {
-    width: calc((100% - 30px) / 2);
+    @include calc(2, 30px);
   }
   @media screen and (min-width: 1200px) {
-    width: calc((100% - 90px) / 4);
+    @include calc(4, 90px);
   }
 }
 
@@ -39,7 +44,7 @@
   justify-content: center;
   background: var(--background-button-color);
   border-radius: 4px;
-  width: 270px;
+  width: 100%;
   height: 120px;
 }
 
