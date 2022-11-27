@@ -1,0 +1,267 @@
+/*! --- модальне вікно --- */
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms linear;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-modal-close {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .modal-close:hover &,
+  .modal-close:focus & {
+    fill: var(--accent-background-color);
+  }
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.modal-field {
+  margin-bottom: 10px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--title-text-color);
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    border-color: var(--accent-background-color);
+  }
+}
+
+.modal-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .modal-input:focus + & {
+    fill: var(--accent-background-color);
+  }
+}
+
+.modal-coment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  &:focus {
+    border-color: var(--accent-background-color);
+  }
+}
+
+.check-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  position: relative;
+  & > a {
+    color: #2196f3;
+  }
+  /*? -----------TOGGLE----------- */
+  &::before {
+    content: "";
+    width: 40px;
+    height: 22px;
+    border-radius: 50px;
+    border: 1px solid red;
+    background: red;
+    margin-right: 8px;
+    transition: border-color 500ms linear, background-color 500ms linear;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: black;
+    transition: transform 250ms linear, background-color 250ms linear;
+  }
+  .modal-checkbox:checked + &::after {
+    transform: translate(20px);
+    background-color: yellow;
+  }
+  .modal-checkbox:checked + &::before {
+    border-color: blue;
+    background: blue;
+  }
+  /*? position: relative;TOGGLE ВИДАЛИТИ */
+  /*? ------------------------------------ */
+}
+
+/* .check-text::before {
+    content: "";
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 3px;
+}
+
+.modal-checkbox:checked + .check-text::before {
+    background-color: var(--accent-background-color);
+    border-color: transparent;
+    background-image: url(../images/icon\ check.svg);
+    background-repeat: no-repeat;
+} */
+/*todo ----
+.check-text span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 3px;
+    fill: transparent;
+}
+
+.modal-checkbox:checked + .check-text span {
+    background-color: var(--accent-background-color);
+    border-color: transparent;
+    fill: #FFFFFF;
+}
+
+.modal-checkbox:focus + .check-text span {
+    border-color: var(--accent-background-color);
+} -------todo*/
+
+/*? -----------TOGGLE----------- */
+
+.check-icon {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*? ------------------------------------ */
+
+.modal-button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 52px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+
+  color: #ffffff;
+  background: #2196f3;
+  border-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+}
