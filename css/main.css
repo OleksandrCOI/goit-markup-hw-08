@@ -418,21 +418,40 @@ body {
 }
 
 .menu-open {
+  display: block;
   margin-left: auto;
 }
 
 .menu-mob {
   width: 100vw;
   height: 100vh;
-  background-color: tomato;
+  background-color: #fff;
   top: 0;
   position: fixed;
   z-index: 1;
-  padding: 48px 40px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .menu-close {
+  display: block;
   margin-left: auto;
+}
+
+.mob-menu-list {
+  margin-bottom: 64px;
+}
+
+.mob-menu-list__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-menu-list__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+  color: #212121;
 }
 
 /* --- Header --- */
