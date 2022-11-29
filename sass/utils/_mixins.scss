@@ -23,11 +23,12 @@
   }
 }
 
-@mixin calc($count, $gap) {
-  width: calc((100% - $gap * ($count - 1)) / $count);
-}
+// @mixin calc($count, $gap) {
+//   width: calc((100% - $gap * ($count - 1)) / $count);
+// }
 // @media screen and (min-width: 1200px) {
 //     @include calc(2, 30px)
+// не працює !!!
 // }
 
 @media screen and (min-width: 480px) {
