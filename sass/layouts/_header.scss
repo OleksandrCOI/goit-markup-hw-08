@@ -2,6 +2,10 @@
 
 .header {
   border-bottom: 1px solid #ececec;
+  @media screen and (max-width: 767px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .navigation {
@@ -10,10 +14,18 @@
 }
 
 .header__container {
-  display: flex;
+  // із-за бургера змінив з флекса на блок
+
   align-items: center;
   padding-top: 0;
   padding-bottom: 0;
+  @media screen and (max-width: 1199px) {
+    display: block;
+    padding: 16px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
 }
 
 /* --- навігація --- */
@@ -28,8 +40,14 @@
 }
 
 .menu {
-  // display: flex;
-  display: none;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .menu__geometry {
