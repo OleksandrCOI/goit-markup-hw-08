@@ -4,6 +4,43 @@
   padding-top: 60px;
   padding-bottom: 60px;
   background: var(--background-footer);
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.footer__wraper {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: baseline;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+    margin-right: 93px;
+  }
+}
+
+.bottom-container {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 165px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 70px;
+    text-align: left;
+  }
 }
 
 /* ---логотип--- */
@@ -71,8 +108,10 @@
 }
 
 .footer {
-  display: flex;
-  align-items: baseline;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: baseline;
+  }
   padding-top: 0;
   padding-bottom: 0;
 }
