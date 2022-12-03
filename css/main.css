@@ -818,7 +818,7 @@ body {
 @media screen and (min-width: 768px) {
   .hero {
     max-width: 1199px;
-    background-image: var(--gradient), url(../images/hero-tab.jpg);
+    background-image: var(--gradient), url(../images/Hero-tab.jpg);
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
