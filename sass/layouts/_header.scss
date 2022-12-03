@@ -90,14 +90,17 @@
 
 .emphasis::after {
   content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
+  // display: none;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
 
-  background: #2196f3;
-  border-radius: 2px;
+    background: #2196f3;
+    border-radius: 2px;
+  }
 }
 
 // .nav-portfolio {

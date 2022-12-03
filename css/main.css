@@ -88,7 +88,12 @@ body {
 
 .centered {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .centered {
+    margin-bottom: 50px;
+  }
 }
 
 .is-hidden {
@@ -446,6 +451,7 @@ body {
 .menu-open {
   display: block;
   margin-left: auto;
+  border-color: transparent;
   border: none;
   line-height: 0;
   background-color: transparent;
@@ -482,9 +488,12 @@ body {
 }
 
 .menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   display: block;
-  margin-top: 20px;
   margin-left: auto;
+  padding: 10px;
   border: none;
   line-height: 0;
   fill: currentColor;
@@ -532,7 +541,6 @@ body {
   line-height: 1.1764705882;
   letter-spacing: 0.02em;
   color: var(--accent-color);
-  margin-bottom: 32px;
 }
 .mob-connekt__tel:hover, .mob-connekt__tel:focus {
   color: var(--accent-color);
@@ -541,6 +549,10 @@ body {
   .mob-connekt__tel {
     font-size: 8vw;
   }
+}
+
+.tel {
+  margin-bottom: 32px;
 }
 
 .mob-connekt__mail {
@@ -556,7 +568,6 @@ body {
 
 .mob-soc {
   display: flex;
-  margin-bottom: 48px;
 }
 
 .mob-soc__item:not(:last-child) {
@@ -663,13 +674,17 @@ body {
 
 .emphasis::after {
   content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #2196f3;
-  border-radius: 2px;
+}
+@media screen and (min-width: 768px) {
+  .emphasis::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #2196f3;
+    border-radius: 2px;
+  }
 }
 
 /* --- контакти --- */
@@ -941,12 +956,18 @@ body {
 }
 
 .card-list__title {
+  text-align: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-text-color);
+}
+@media screen and (min-width: 768px) {
+  .card-list__title {
+    text-align: left;
+  }
 }
 
 .title__geometri {
